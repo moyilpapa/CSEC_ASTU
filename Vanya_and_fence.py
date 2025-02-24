@@ -1,12 +1,23 @@
-n=int(input ())
-h=int(input())
-MPVW=0
-for i in range (n):
-    a=int(input())
-    if a>2*h:
-        print ("Invalid Input")
-    elif 5<a<=2*h:
-        MPVW+=2
+h = map(int, input().split())
+ 
+if not (1 <= n <= 1000 and 1 <= h <= 1000):
+    print("invalid input")
+    exit()
+ 
+a = list(map(int, input().split()))
+ 
+if len(a) != n:
+    print("invalid input")
+    exit()
+ 
+mpvw = 0
+ 
+for i in a:
+    if not (1 <= i <= 2 * h):
+        print("invalid input")
+        exit()
+    
+    if i <= h:
+        mpvw += 1
     else:
-        MPVW+=1
-print(MPVW)   
+        mpvw += 2
